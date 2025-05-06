@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            padding: 20px;
+        }
+        .task-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .task {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+        }
+        .task.complete {
+            background-color: #d4edda;
+        }
+        .task h3 {
+            font-size: 18px;
+        }
+        .task button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .task button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Your Tasks</h2>
+    <div class="task-container">
+        <div class="task">
+            <h3>Complete Daily Claim</h3>
+            <p>Earn 1000 TokenPlus</p>
+            <button onclick="markComplete(this)">Complete</button>
+        </div>
+        <div class="task">
+            <h3>View Ads</h3>
+            <p>Earn 2000 TokenPlus per ad</p>
+            <button onclick="markComplete(this)">Complete</button>
+        </div>
+    </div>
+
+    <script>
+        function markComplete(button) {
+            const task = button.closest('.task');
+            task.classList.add('complete');
+            button.innerText = 'Completed';
+            button.disabled = true;
+        }
+    </script>
+</body>
+</html>
