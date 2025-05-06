@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Tap Refill Speed</title>
+    <style>
+        .refill-system {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .refill-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .refill-button:hover {
+            background-color: #218838;
+        }
+        .refill-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="refill-system">
+        <h2>Auto-Tap Refill Speed</h2>
+        <div id="refill-speed">Speed: 1 tap/sec</div>
+        <button class="refill-button" id="upgrade-button">Upgrade Speed</button>
+        <div class="refill-info" id="refill-cost">Cost: 1000 TokenPlus</div>
+    </div>
+
+    <script>
+        let refillSpeed = 1;
+        let refillCost = 1000;
+
+        const refillDisplay = document.getElementById('refill-speed');
+        const refillCostDisplay = document.getElementById('refill-cost');
+        const upgradeButton = document.getElementById('upgrade-button');
+
+        upgradeButton.addEventListener('click', () => {
+            refillSpeed *= 2;
+            refillCost *= 2;
+            refillDisplay.textContent = `Speed: ${refillSpeed} tap/sec`;
+            refillCostDisplay.textContent = `Cost: ${refillCost} TokenPlus`;
+        });
+    </script>
+</body>
+</html>
