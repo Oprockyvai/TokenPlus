@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap Power System</title>
+    <style>
+        .level-system {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .level-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .level-button:hover {
+            background-color: #0056b3;
+        }
+        .level-up {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="level-system">
+        <h2>Tap Power Level</h2>
+        <div id="current-level">Level: 1</div>
+        <button class="level-button" id="upgrade-button">Upgrade Level</button>
+        <div class="level-up" id="level-up-cost">Cost: 2000 TokenPlus</div>
+    </div>
+
+    <script>
+        let currentLevel = 1;
+        let cost = 2000;
+
+        const levelDisplay = document.getElementById('current-level');
+        const costDisplay = document.getElementById('level-up-cost');
+        const upgradeButton = document.getElementById('upgrade-button');
+
+        upgradeButton.addEventListener('click', () => {
+            currentLevel++;
+            cost *= 2;
+            levelDisplay.textContent = `Level: ${currentLevel}`;
+            costDisplay.textContent = `Cost: ${cost} TokenPlus`;
+        });
+    </script>
+</body>
+</html>
