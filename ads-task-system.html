@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Task System</title>
+    <style>
+        .ad-task {
+            background-color: #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+            margin: 10px auto;
+        }
+        .ad-task button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .ad-task button:hover {
+            background-color: #0056b3;
+        }
+        .task-info {
+            margin-top: 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>View Ads and Earn Tokens</h2>
+    <div class="ad-task">
+        <h3>Watch an Ad</h3>
+        <p>Earn 2000 TokenPlus</p>
+        <button onclick="markAdComplete()">Complete Ad</button>
+        <div class="task-info" id="ad-info">Completed: 0</div>
+    </div>
+
+    <script>
+        let completedAds = 0;
+
+        function markAdComplete() {
+            completedAds++;
+            document.getElementById('ad-info').textContent = `Completed: ${completedAds}`;
+        }
+    </script>
+</body>
+</html>
